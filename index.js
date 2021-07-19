@@ -26,8 +26,10 @@ else if (argv.f) {
 function checkCache(target, options) {
   exec(`curl -s -L -D- --max-redirs 1 --max-time 9 ${target} -o /dev/null`, (error, stdout, stderr) => {
     if (stdout) {
+
       let match = (/(?:via:.*varnish|x-cache-hits)/i).test(stdout)
       if (match) return invalidate_cache(options)
+      else console.log("\x1b[36m%s\x1b[0m",`${target} is  not vulnerable`)
     }
     if (stderr) console.log(stderr)
     if (error) console.log(error)
