@@ -24,7 +24,7 @@ else if (argv.f) {
 }
 
 function checkCache(target, options) {
-  exec(`curl -s -D- ${target} -o /dev/null`, (error, stdout, stderr) => {
+  exec(`curl -s -D- --max-time 9 ${target} -o /dev/null`, (error, stdout, stderr) => {
     if (stdout) {
       let match = (/(?:via:.*varnish|x-cache-hits)/i).test(stdout)
       if (match) return invalidate_cache(options)
@@ -36,7 +36,7 @@ function checkCache(target, options) {
 
   //testing for unauthenticated cache purging
   function invalidate_cache(options) {
-    exec(`curl -s -X PURGE  ${target}`, (error, stdout, stderr) => {
+    exec(`curl -s --max-time 9 -X PURGE  ${target}`, (error, stdout, stderr) => {
 
       if ((/(?:status.*ok)/i).test(stdout)){
          console.log("\x1b[36m%s\x1b[0m", `${target} is  probably vulnerable`)

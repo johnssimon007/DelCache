@@ -22,7 +22,7 @@ node index.js -h
 node index.js -t target.com
 ```
 
-3.test a list of domains
+3.test a list of urls
 ```
 node index.js -f list-of-url.txt
 ```
