@@ -24,12 +24,12 @@ node index.js -t target.com
 
 3.test a list of domains
 ```
-node index.js -f domain_list.txt
+node index.js -f list-of-url.txt
 ```
 4.save output to a directory
 
 ```
-node index.js -f domain_list.txt -o output.txt
+node index.js -f list-of-urls.txt -o output.txt
 
 ```
 References:
