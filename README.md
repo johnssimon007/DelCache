@@ -32,3 +32,6 @@ node index.js -f domain_list.txt
 node index.js -f domain_list.txt -o output.txt
 
 ```
+References:
+
+https://hackerone.com/reports/154278
