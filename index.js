@@ -32,7 +32,7 @@ function checkCache(target, options) {
       else console.log("\x1b[36m%s\x1b[0m",`${target} is  not vulnerable`)
     }
     if (stderr) console.log(stderr)
-    if (error) console.log(error)
+    //if (error) console.log(error)
 
   })
 
