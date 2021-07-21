@@ -26,7 +26,7 @@ node index.js -t target.com
 ```
 node index.js -f list-of-domain.txt
 ```
-4.save output to a directory
+4.save output to a file
 
 ```
 node index.js -f list-of-domains.txt -o output.txt
